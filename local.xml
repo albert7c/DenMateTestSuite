@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="DenMateUITestSuite">
+    <groups>
+        <run>
+            <include name="HomePageTests" />
+        </run>
+    </groups>
+
+    <test name="HomePageTests">
+        <classes>
+            <class name="com.denmate.ui.tests.HomePageTests" />
+        </classes>
+    </test>
+</suite>
