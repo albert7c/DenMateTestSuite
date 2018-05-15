@@ -3,11 +3,11 @@
 <suite name="DenMateUITestSuite">
     <groups>
         <run>
-            <include name="HomePageTests" />
+            <include name="ui" />
         </run>
     </groups>
 
-    <test name="HomePageTests">
+    <test name="ui">
         <classes>
             <class name="com.denmate.ui.tests.HomePageTests" />
         </classes>

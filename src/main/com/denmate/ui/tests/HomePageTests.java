@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class HomePageTests extends UITestTemplate {
 
-	@Test( groups = "HomePageTests" )
+	@Test( groups = "ui" )
 	public void testVancouverSpecialsPage() {
 		HomePage homePage = new HomePage(driver);
 		VancouverSpecialsPage vancouverSpecialsPage = homePage.navigateToVancouverSpecialsPage();
