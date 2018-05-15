@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class UITestTemplate {
 
 	protected WebDriver driver;
-	private static final String PATH_TO_RESOURCES_FOLDER = "src/resources/";
+	private static final String PATH_TO_RESOURCES_FOLDER = "/src/resources/";
 	private static final String CHROMEDRIVER_FILENAME = "chromedriver";
 
 	@BeforeSuite( alwaysRun = true )
