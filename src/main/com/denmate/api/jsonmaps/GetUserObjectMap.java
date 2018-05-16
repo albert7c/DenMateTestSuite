@@ -102,7 +102,5 @@ public class GetUserObjectMap extends JsonMap {
 	public JsonArray getDenPreference() {
 		return denPreference;
 	}
-	public JsonElement getUserIntent() {
-		return userIntent;
-	}
+	public JsonElement getUserIntent() { return userIntent; }
 }
