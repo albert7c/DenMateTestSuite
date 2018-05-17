@@ -12,6 +12,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 
 public class ResponseHelper {
+
 	public static <T extends JsonMap> T mapReponseToJsonMap(Class<T> objectMapClass, HttpURLConnection connection) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 		String line;

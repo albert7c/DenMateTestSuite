@@ -20,7 +20,7 @@ public class GetUserTests extends APITestTemplate {
 		GetUserObjectMap getUserObjectMap = ResponseHelper.mapReponseToJsonMap(GetUserObjectMap.class, connection);
 
 		assert200Response(connection.getResponseCode());
-		assertNotNull(getUserObjectMap.getUserId());
+		assertNotNull(getUserObjectMap.getId());
 		assertNotNull(getUserObjectMap.getAccountType());
 		assertNotNull(getUserObjectMap.getBoosterCount());
 		assertNotNull(getUserObjectMap.getCityName());

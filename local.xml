@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite thread-count="5" parallel="methods" name="DenMateUITestSuite">
+<suite thread-count="5" parallel="methods" name="DenMateTestSuite">
+    <groups>
+        <run>
+            <include name="api"/>
+        </run>
+    </groups>
+
     <test name="DenMate UI - Regression Tests">
         <packages>
             <package name="com.denmate.ui.tests.*" />

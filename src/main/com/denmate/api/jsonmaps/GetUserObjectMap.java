@@ -5,7 +5,7 @@ import com.google.gson.JsonElement;
 
 public class GetUserObjectMap extends JsonMap {
 
-	private String userId;
+	private String id;
 	private String distanceRange;
 	private String profileStatus;
 	private String userLanguage;
@@ -33,7 +33,7 @@ public class GetUserObjectMap extends JsonMap {
 	private JsonElement userIntent;
 
 
-	public String getUserId() { return userId; }
+	public String getId() { return id; }
 	public String getDistanceRange() {
 		return distanceRange;
 	}
