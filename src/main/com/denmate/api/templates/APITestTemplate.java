@@ -4,7 +4,6 @@ import org.testng.ITestContext;
 import org.testng.annotations.BeforeSuite;
 
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -24,6 +23,8 @@ public class APITestTemplate {
 	protected final static String _REQUESTORID_HEADER = "requestorid";
 	protected final static String _AUTHORIZATION_HEADER = "Authorization";
 
+	public final static int _SUCCESSFULL_200_RESPONSE = 200;
+
 	@BeforeSuite( groups = { "api" } )
 	public void setupEnvironmentVariablesBeforeSuite(ITestContext context) {
 		_API_HOST = System.getProperty("apiHost");
@@ -32,7 +33,7 @@ public class APITestTemplate {
 
 	}
 
-	public InputStreamReader createRequest(String endPoint) throws IOException {
+	public HttpURLConnection createRequest(String endPoint) throws IOException {
 		URL url = new URL(
 				_API_HOST + _DEV_API_PATH + endPoint + _QUERYSTRING_QUESTIONMARK + _QUERYSTRING_ID + _GET_USER_USERID
 		);
@@ -42,6 +43,6 @@ public class APITestTemplate {
 		connection.setRequestProperty(_REQUESTORID_HEADER, _GET_USER_USERID);
 		connection.setRequestProperty(_AUTHORIZATION_HEADER, _GET_USER_AUTHTOKEN);
 
-		return new InputStreamReader(connection.getInputStream());
+		return connection;
 	}
 }
