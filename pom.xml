@@ -28,6 +28,18 @@
             <version>2.8.4</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>5.0.4</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-java</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
     </dependencies>
 
     <profiles>
@@ -48,6 +60,8 @@
                                 <apiHost>${env.apiHost}</apiHost>
                                 <userId>${env.userId}</userId>
                                 <authToken>${env.authToken}</authToken>
+                                <mobileAppPath>${env.mobileAppPath}</mobileAppPath>
+                                <appiumNodeUrl>${env.appiumNodeUrl}</appiumNodeUrl>
                             </systemPropertyVariables>
                             <suiteXmlFiles>
                                 <suiteXmlFile>./local.xml</suiteXmlFile>
