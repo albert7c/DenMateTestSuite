@@ -15,7 +15,6 @@ public class ResponseHelper {
 
 	public static <T extends JsonMap> T mapReponseToJsonMap(Class<T> objectMapClass, HttpURLConnection connection) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-		System.out.println(connection);
 		String line;
 		StringBuilder sb = new StringBuilder();
 		while ((line = br.readLine()) != null) {
