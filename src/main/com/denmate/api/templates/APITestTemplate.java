@@ -8,8 +8,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class APITestTemplate {
+	public static String _GET_USER_USERID = new String();
+
 	protected static String _API_HOST = new String();
-	protected static String _GET_USER_USERID = new String();
 	protected static String _GET_USER_AUTHTOKEN = new String();
 
 	protected final static String _DEV_API_PATH = "/dev/api/";
@@ -23,7 +24,7 @@ public class APITestTemplate {
 	protected final static String _REQUESTORID_HEADER = "requestorid";
 	protected final static String _AUTHORIZATION_HEADER = "Authorization";
 
-	public final static int _SUCCESSFULL_200_RESPONSE = 200;
+	protected final static int _SUCCESSFULL_200_RESPONSE = 200;
 
 	@BeforeSuite( groups = { "api" } )
 	public void setupEnvironmentVariablesBeforeSuite(ITestContext context) {
@@ -33,7 +34,7 @@ public class APITestTemplate {
 
 	}
 
-	public HttpURLConnection createRequest(String endPoint) throws IOException {
+	public static HttpURLConnection createRequest(String endPoint) throws IOException {
 		URL url = new URL(
 				_API_HOST + _DEV_API_PATH + endPoint + _QUERYSTRING_QUESTIONMARK + _QUERYSTRING_ID + _GET_USER_USERID
 		);
