@@ -11,24 +11,24 @@ import java.util.concurrent.TimeUnit;
 public class UITestTemplate {
 
 	protected WebDriver driver;
-	private static final String PATH_TO_RESOURCES_FOLDER = "src/resources/";
+	private static final String PATH_TO_RESOURCES_FOLDER = "/src/resources/";
 	private static final String CHROMEDRIVER_FILENAME = "chromedriver";
 
-	@BeforeSuite( alwaysRun = true )
+	@BeforeSuite( groups = "ui" )
 	protected void setupDriverBeforeSuite() {
 		System.setProperty("webdriver.chrome.driver", String.format(
 				System.getProperty("user.dir") + "%s%s", PATH_TO_RESOURCES_FOLDER, CHROMEDRIVER_FILENAME))
 		;
 	}
 
-	@BeforeMethod( alwaysRun = true)
+	@BeforeMethod( groups = "ui" )
 	protected void setupDriverBeforeMethod() {
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		driver.get("https://www.denmate.com/");
 	}
 
-	@AfterMethod( alwaysRun = true)
+	@AfterMethod( groups = "ui" )
 	protected void tearDownDriverAfterClass() {
 		driver.quit();
 	}

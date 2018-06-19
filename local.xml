@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="DenMateUITestSuite">
+<suite thread-count="5" parallel="methods" name="DenMateTestSuite">
     <groups>
         <run>
-            <include name="ui" />
+            <include name="api"/>
         </run>
     </groups>
 
-    <test name="ui">
-        <classes>
-            <class name="com.denmate.ui.tests.HomePageTests" />
-        </classes>
+    <test name="DenMate UI - Regression Tests">
+        <packages>
+            <package name="com.denmate.ui.tests.*" />
+        </packages>
+    </test>
+
+    <test name="DenMate API - Regression Tests">
+        <packages>
+            <package name="com.denmate.api.tests.*" />
+        </packages>
     </test>
 </suite>
